@@ -1,16 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap');
+
 .firstFixed {
   position: fixed;
-  background-color: aqua;
+  // background-color: aqua;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   z-index: 1;
 
-  h1 {
-    color: aqua;
+  // background-image: url(../../public/images/firstScreen/bg_footer_top.png);
+  // background-image: url(../../public/images/firstScreen/bg_careers_top-desktop.png);
+  // background-image: url(../../public/images/firstScreen/bg_top2.png);
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  // background-clip: content-box;
+  background-size: contain;
+  // background-color: wheat;
+  background-color: #4481b7;
+
+  section {
     position: absolute;
-    top: 48%;
-    left: 50%;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    // background-image: url(../../public/images/firstScreen/bg_footer_top.png);
+    background-image: url(../../public/images/firstScreen/bg_top2.png);
+
+    // background-image: url(../../public/images/firstScreen/fmount.png);
+    // background-image: url(../../public/images/firstScreen/mid.png);
+    // background-image: url(../../public/images/firstScreen/mfog.png);
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-size: contain;
+    // background-color: lightblue;
+
+    transition: .7s;
   }
+
+  h1 {
+    color: #4481b7;
+    position: absolute;
+    top: 36%;
+    z-index: 4;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 3.5rem;
+    width: 100%;
+    text-align: center;
+    color: rgb(253, 145, 91);
+  }
+
+  svg {
+    z-index: -2;
+  }
+}
+
+.topCvDescription {
+  position: absolute;
+  top: 20px;
+  z-index: 4;
+  // color: lightblue;
+  color: #4481b7;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+
+  font-weight: bold;
+}
+
+.topCvDescription__left {
+  max-width: 240px;
+}
+.topCvDescription__right {
+  max-width: 240px;
 }
