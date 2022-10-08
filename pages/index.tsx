@@ -3,6 +3,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect, useState } from 'react';
 import { FirstScreen } from '../components/firstScreen/FirstScreen';
+import { Nav } from '../components/layout/nav';
+import { SecondSection } from '../components/secondSection/SecondSection';
 import styles from '../styles/Home.module.css'
 
 let lastKnownScrollPosition = 0;
@@ -43,8 +45,9 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+        <Nav />
         <FirstScreen scrollY={scrollPosition} />
-        <h1 className='khem'>!!!!!!</h1>
+        <SecondSection scrollY={scrollPosition} />
         <span>{scrollPosition}</span>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
@@ -55,7 +58,7 @@ const Home: NextPage = () => {
           <code className={styles.code}>pages/index.tsx</code>
         </p>
 
-        <div className={styles.grid}>
+        <div className={styles.grid} style={{height: '4000px'}}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Documentation &rarr;</h2>
             <p>Find in-depth information about Next.js features and API.</p>

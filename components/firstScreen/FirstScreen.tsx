@@ -9,7 +9,12 @@ interface IProps {
 export const FirstScreen: FC<IProps> = ({ scrollY }) => {
     const sunPosition = scrollY * 0.5;
     return (
-        <section className={styles.firstFixed}>
+        <section className={styles.firstFixed}
+            style={{
+                // zIndex: scrollY < 800 ? 2 : 0,
+                transform: `translateY(-${scrollY > 800 ? scrollY - 800 : 0}px)`
+            }}
+        >
             
             {/* top cv description */}
             <div className={styles.topCvDescription}>
@@ -36,11 +41,18 @@ export const FirstScreen: FC<IProps> = ({ scrollY }) => {
                 <ellipse
                     // mask="url(#mask_5c8988d59dd2306756a83017_viewer-c8de47ff-d847-41cd-a60c-8e81d18d53f8)"
                     cx="50%"
-                    cy={`${scrollY > 100 ? '50%' :  (100 - scrollY / 2) + '%'}`}
-                    rx={scrollY * 4}
-                    ry={scrollY * 4}
+                    cy={`${
+                        scrollY > 200 ?
+                        '50%' :
+                        (100 - scrollY / 4) + '%'
+                    }`}
+                    rx={scrollY * 2}
+                    ry={scrollY * 2}
                     style={{
-                        fill:`rgb(253, ${scrollY < 100 ? 145 * (scrollY / 100) : 145}, ${scrollY < 100 ? 91 * (scrollY / 100) : 91})`, 
+                        fill:`rgb(253,
+                            ${scrollY < 200 ? 145 * (scrollY / 200) : 145},
+                            ${scrollY < 200 ? 91 * (scrollY / 200) : 91})
+                            `, 
                         stroke:'none', strokeWidth:0, pointerEvents: 'visiblePainted'}}
                     // style={{fill:`rgb(253, 60, 45)`, stroke:'none', strokeWidth:0, pointerEvents: 'visiblePainted'}}
                     />
@@ -52,7 +64,7 @@ export const FirstScreen: FC<IProps> = ({ scrollY }) => {
                     // transform: `translateY(${scrollY <  100 ? 100 : scrollY}px)`,
                     // transform: `translateY(${scrollY}px)`,
                     // transform: `translateY(${scrollY > 100 ? 100 : scrollY}px)`,
-                    opacity: scrollY < 210 ? 1 : 0.82,
+                    opacity: scrollY < 400 ? 1 : 0.9999,
                 }}
             />
         </section>

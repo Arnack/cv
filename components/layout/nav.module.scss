@@ -1,0 +1,22 @@
+.downloadCV {
+    color: #4481b7;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-size: 1.1rem;
+    // font-weight: 600;
+    transition: all 0.2s ease-in-out;
+
+
+
+    transform: rotate(-90deg);
+    position: fixed;
+    top: 91px;
+    right: -40px;
+    z-index: 10;
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover {
+        mix-blend-mode: screen;
+        // mix-blend-mode: color-dodge;
+    }
+}
